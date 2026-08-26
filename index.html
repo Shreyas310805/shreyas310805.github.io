@@ -71,37 +71,14 @@
         </div>
       </div>
 
-      <figure class="bench">
-        <figcaption class="bench-head">
-          <span class="bench-model">MobileNetV2</span>
-          <span class="bench-scope">Soybean leaf &middot; 8 classes</span>
+      <figure class="portrait">
+        <div class="portrait-frame">
+          <span class="portrait-mono" aria-hidden="true">ST</span>
+          <img class="portrait-img" src="profile.jpg" alt="Shreyas Tiwari" width="800" height="800">
+        </div>
+        <figcaption class="portrait-cap">
+          <span class="status-dot" aria-hidden="true"></span>Third year at VIT Bhopal &middot; open to internships
         </figcaption>
-
-        <div class="bench-group">
-          <p class="bench-label">Test accuracy</p>
-          <div class="bar" style="--pct: 81.7; --bar-delay: 0.5s">
-            <div class="bar-top"><span class="bar-name">Baseline</span><span class="bar-val"><span data-count="81.7" data-decimals="1">81.7</span><em>%</em></span></div>
-            <span class="bar-track"><span class="bar-fill"></span></span>
-          </div>
-          <div class="bar bar-strong" style="--pct: 92.9; --bar-delay: 0.68s">
-            <div class="bar-top"><span class="bar-name">Two-stage fine-tune</span><span class="bar-val"><span data-count="92.9" data-decimals="1">92.9</span><em>%</em></span></div>
-            <span class="bar-track"><span class="bar-fill"></span></span>
-          </div>
-        </div>
-
-        <div class="bench-group">
-          <p class="bench-label">Model size</p>
-          <div class="bar" style="--pct: 100; --bar-delay: 0.86s">
-            <div class="bar-top"><span class="bar-name">Float32</span><span class="bar-val"><span data-count="9.3" data-decimals="1">9.3</span><em>MB</em></span></div>
-            <span class="bar-track"><span class="bar-fill"></span></span>
-          </div>
-          <div class="bar bar-strong" style="--pct: 28; --bar-delay: 1.04s">
-            <div class="bar-top"><span class="bar-name">INT8 quantized</span><span class="bar-val"><span data-count="2.6" data-decimals="1">2.6</span><em>MB</em></span></div>
-            <span class="bar-track"><span class="bar-fill"></span></span>
-          </div>
-        </div>
-
-        <p class="bench-foot">Selected over MobileNetV3-Small, EfficientNet-B0 and DenseNet121. Quantized for Raspberry Pi at under a percentage point of accuracy lost.</p>
       </figure>
     </div>
   </section>
