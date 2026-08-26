@@ -168,10 +168,14 @@ var CONTACT_EMAIL = 'shreyastiwari0531@gmail.com';
     }, delay || 0);
   }
 
-  function initHeroCounters() {
-    document.querySelectorAll('.bench [data-count]').forEach(function (el, i) {
-      countUp(el, 520 + i * 130);
-    });
+  function initPortrait() {
+    var img = document.querySelector('.portrait-img');
+    if (!img) return;
+
+    function fallback() { img.classList.add('is-missing'); }
+
+    img.addEventListener('error', fallback);
+    if (img.complete && img.naturalWidth === 0) fallback();
   }
 
   /* ---------- scroll reveal ---------- */
@@ -301,7 +305,7 @@ var CONTACT_EMAIL = 'shreyastiwari0531@gmail.com';
     initContactForm();
     initYear();
     initHeroSequence();
-    initHeroCounters();
+    initPortrait();
   });
 
   motionQuery.addEventListener('change', function (e) { reduced = e.matches; });
