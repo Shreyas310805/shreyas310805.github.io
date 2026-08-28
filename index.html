@@ -20,9 +20,9 @@
   <symbol id="sym-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></symbol>
   <symbol id="sym-arrow" viewBox="0 0 24 24"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></symbol>
   <symbol id="sym-external" viewBox="0 0 24 24"><path d="M10 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5"/><path d="M14 4h6v6"/><path d="M20 4l-9 9"/></symbol>
+  <symbol id="sym-library" viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="13" y="4" width="8" height="7" rx="1.5"/><rect x="13" y="14" width="8" height="6" rx="1.5"/></symbol>
   <symbol id="sym-research" viewBox="0 0 24 24"><path d="M12 2.5L21.5 12 12 21.5 2.5 12z"/><path d="M12 8l4 4-4 4-4-4z"/></symbol>
   <symbol id="sym-model" viewBox="0 0 24 24"><path d="M9 3.5H5.5v6l-2.5 2.5 2.5 2.5v6H9"/><path d="M15 3.5h3.5v6l2.5 2.5-2.5 2.5v6H15"/><circle cx="12" cy="12" r="1.6"/></symbol>
-  <symbol id="sym-pipeline" viewBox="0 0 24 24"><path d="M3.5 6h5"/><path d="M3.5 12h10"/><path d="M3.5 18h16"/><path d="M17 15.5l2.5 2.5-2.5 2.5"/></symbol>
 </svg>
 
 <header class="site-head">
@@ -107,7 +107,7 @@
       <div class="band-head reveal">
         <p class="eyebrow eyebrow--pulse">Selected work</p>
         <h2 class="band-title">Three builds worth<br>reading the code for</h2>
-        <p class="band-sub">Teal marks systems and data work. Violet marks anything with a model at the centre of it. All five projects are on the projects page.</p>
+        <p class="band-sub">Teal marks systems and data work. Violet marks anything with a model at the centre of it. All six projects are on the projects page.</p>
       </div>
 
       <div class="card-grid">
@@ -129,16 +129,20 @@
         </article>
 
         <article class="card reveal" data-delay="180" style="--accent: var(--signal);">
-          <p class="card-kind"><svg class="glyph"><use href="#sym-pipeline"/></svg>Data platform</p>
-          <h3>Aadhaar Drishti</h3>
-          <p>An ingestion-to-insight pipeline for public datasets. Validation and cleaning happen at load time, not per query, so downstream analysis stops repeating the same preprocessing.</p>
-          <div class="tags"><span>Python</span><span>pandas</span><span>Data pipelines</span></div>
-          <div class="card-links"><a href="https://github.com/Shreyas310805" target="_blank" rel="noopener">GitHub <svg class="glyph"><use href="#sym-external"/></svg></a></div>
+          <p class="card-kind"><svg class="glyph"><use href="#sym-library"/></svg>Live product</p>
+          <h3>PromptLib</h3>
+          <p>A library of 722 prompts, each run against a real model before publishing &mdash; image transformations and fill-in-the-blank text templates. Multi-page, filterable, and entirely client-side: no account, no backend, no API key.</p>
+          <p class="card-stat">Live now &middot; 722 prompts &middot; 5 categories</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Client-side storage</span></div>
+          <div class="card-links">
+            <a href="https://shreyas310805.github.io/promptlib/" target="_blank" rel="noopener">Live site <svg class="glyph"><use href="#sym-external"/></svg></a>
+            <a href="https://github.com/Shreyas310805" target="_blank" rel="noopener">GitHub <svg class="glyph"><use href="#sym-external"/></svg></a>
+          </div>
         </article>
       </div>
 
       <div class="tail reveal">
-        <a class="btn btn-ghost" href="projects.html">See all five projects <svg class="glyph"><use href="#sym-arrow"/></svg></a>
+        <a class="btn btn-ghost" href="projects.html">See all six projects <svg class="glyph"><use href="#sym-arrow"/></svg></a>
       </div>
     </div>
   </section>
