@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects &mdash; Shreyas Tiwari</title>
-<meta name="description" content="Five projects by Shreyas Tiwari - CNN benchmarking research, LLM resume screening, dataset analytics, a productivity dashboard, and a records manager.">
+<meta name="description" content="Six projects by Shreyas Tiwari - a live prompt library, CNN benchmarking research, LLM resume screening, dataset analytics, a productivity dashboard, and a records manager.">
 <meta name="theme-color" content="#06080B">
 <script>(function(){try{var t=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +24,7 @@
   <symbol id="sym-model" viewBox="0 0 24 24"><path d="M9 3.5H5.5v6l-2.5 2.5 2.5 2.5v6H9"/><path d="M15 3.5h3.5v6l2.5 2.5-2.5 2.5v6H15"/><circle cx="12" cy="12" r="1.6"/></symbol>
   <symbol id="sym-pipeline" viewBox="0 0 24 24"><path d="M3.5 6h5"/><path d="M3.5 12h10"/><path d="M3.5 18h16"/><path d="M17 15.5l2.5 2.5-2.5 2.5"/></symbol>
   <symbol id="sym-dashboard" viewBox="0 0 24 24"><path d="M3.5 17.5a8.5 8.5 0 0 1 17 0"/><path d="M12 17.5L16 10.5"/><circle cx="12" cy="17.5" r="1.4"/></symbol>
+  <symbol id="sym-library" viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="13" y="4" width="8" height="7" rx="1.5"/><rect x="13" y="14" width="8" height="6" rx="1.5"/></symbol>
   <symbol id="sym-schema" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9.5h18"/><path d="M9.5 9.5V20"/></symbol>
 </svg>
 
@@ -58,7 +59,7 @@
       <div class="band-head">
         <p class="eyebrow hero-fade" style="--d: 0.05s">Projects</p>
         <h2 class="band-title">
-          <span class="line-mask"><span>Five builds,</span></span>
+          <span class="line-mask"><span>Six builds,</span></span>
           <span class="line-mask"><span>one habit</span></span>
         </h2>
         <p class="band-sub hero-fade" style="--d: 0.45s">Teal marks systems and data work. Violet marks anything with a model at the centre of it. Each card says what the project does and which decision made it work.</p>
@@ -74,7 +75,19 @@
           <div class="card-links"><a href="https://github.com/Shreyas310805" target="_blank" rel="noopener">GitHub <svg class="glyph"><use href="#sym-external"/></svg></a></div>
         </article>
 
-        <article class="card reveal" data-delay="70" style="--accent: var(--pulse);">
+        <article class="card reveal" data-delay="70" style="--accent: var(--signal);">
+          <p class="card-kind"><svg class="glyph"><use href="#sym-library"/></svg>Live product</p>
+          <h3>PromptLib</h3>
+          <p>A browsable library of prompts that have each been run against a real model before being published &mdash; 266 image-transformation prompts written to keep the uploaded subject recognisable, and 456 fill-in-the-blank text templates across decks, essays, reports and emails. Built as separate pages per category with filtering, a prompt builder, and saved prompts persisted on the device. No account, no backend, no API key.</p>
+          <p class="card-stat">722 prompts &middot; 5 categories &middot; fully client-side</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Client-side storage</span><span>GitHub Pages</span></div>
+          <div class="card-links">
+            <a href="https://shreyas310805.github.io/promptlib/" target="_blank" rel="noopener">Live site <svg class="glyph"><use href="#sym-external"/></svg></a>
+            <a href="https://github.com/Shreyas310805" target="_blank" rel="noopener">GitHub <svg class="glyph"><use href="#sym-external"/></svg></a>
+          </div>
+        </article>
+
+        <article class="card reveal" data-delay="140" style="--accent: var(--pulse);">
           <p class="card-kind"><svg class="glyph"><use href="#sym-model"/></svg>Applied LLM</p>
           <h3>Resume Analyzer</h3>
           <p>An LLM-powered screening tool that parses resumes into structured fields and scores them against a target job description on skill coverage and structure. The decision that made it usable: constraining model output to a strict JSON schema, so scores, missing skills, and formatting flags render deterministically instead of as free text a parser has to guess at.</p>
@@ -82,7 +95,7 @@
           <div class="card-links"><a href="https://github.com/Shreyas310805" target="_blank" rel="noopener">GitHub <svg class="glyph"><use href="#sym-external"/></svg></a></div>
         </article>
 
-        <article class="card reveal" data-delay="140" style="--accent: var(--signal);">
+        <article class="card reveal" data-delay="210" style="--accent: var(--signal);">
           <p class="card-kind"><svg class="glyph"><use href="#sym-pipeline"/></svg>Data platform</p>
           <h3>Aadhaar Drishti</h3>
           <p>An ingestion-to-insight pipeline that stages raw public-dataset records, normalizes heterogeneous schemas into one shape, and persists a clean, queryable structure. Validation and cleaning moved to load time rather than per query, which eliminated the repeated preprocessing every downstream analysis was otherwise paying for.</p>
@@ -90,7 +103,7 @@
           <div class="card-links"><a href="https://github.com/Shreyas310805" target="_blank" rel="noopener">GitHub <svg class="glyph"><use href="#sym-external"/></svg></a></div>
         </article>
 
-        <article class="card reveal" data-delay="210" style="--accent: var(--signal);">
+        <article class="card reveal" data-delay="280" style="--accent: var(--signal);">
           <p class="card-kind"><svg class="glyph"><use href="#sym-dashboard"/></svg>Full stack</p>
           <h3>LifeOS</h3>
           <p>A productivity and health dashboard that unifies task management and health analytics behind a single state layer, so one logged activity updates both views without a reload. Raw activity logs aggregate into completion-rate and health-trend series rendered live through Chart.js, with authentication delegated to Google OAuth 2.0 to remove custom credential storage entirely.</p>
@@ -98,7 +111,7 @@
           <div class="card-links"><a href="https://github.com/Shreyas310805" target="_blank" rel="noopener">GitHub <svg class="glyph"><use href="#sym-external"/></svg></a></div>
         </article>
 
-        <article class="card reveal" data-delay="280" style="--accent: var(--signal);">
+        <article class="card reveal" data-delay="350" style="--accent: var(--signal);">
           <p class="card-kind"><svg class="glyph"><use href="#sym-schema"/></svg>Web systems</p>
           <h3>CCRM &mdash; Course &amp; Records Manager</h3>
           <p>Students, courses, and enrollments modelled as encapsulated classes using inheritance and interfaces, keeping validation and business rules inside domain objects rather than scattered through procedural scripts. Data access sits behind a repository layer over a normalized MySQL schema, which keeps CRUD, search, and retrieval independently testable.</p>
