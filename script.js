@@ -65,11 +65,16 @@ var CONTACT_EMAIL = 'shreyastiwari0531@gmail.com';
   /* ---------- page load sequence ---------- */
 
   function initHeroSequence() {
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () {
-        document.body.classList.add('ready');
-      });
-    });
+    var done = false;
+
+    function go() {
+      if (done) return;
+      done = true;
+      document.body.classList.add('ready');
+    }
+
+    requestAnimationFrame(function () { requestAnimationFrame(go); });
+    setTimeout(go, 400);
   }
 
   /* ---------- navigation ---------- */
@@ -105,23 +110,6 @@ var CONTACT_EMAIL = 'shreyastiwari0531@gmail.com';
     window.addEventListener('resize', function () {
       if (window.innerWidth > 760) close();
     });
-  }
-
-  function initStickyHeader() {
-    var head = document.querySelector('.site-head');
-    if (!head) return;
-    var ticking = false;
-
-    function update() {
-      head.classList.toggle('head-stuck', window.scrollY > 12);
-      ticking = false;
-    }
-
-    window.addEventListener('scroll', function () {
-      if (!ticking) { ticking = true; requestAnimationFrame(update); }
-    }, { passive: true });
-
-    update();
   }
 
   function initSmoothScroll() {
@@ -172,16 +160,23 @@ var CONTACT_EMAIL = 'shreyastiwari0531@gmail.com';
     var img = document.querySelector('.portrait-img');
     if (!img) return;
 
-    function fallback() { img.classList.add('is-missing'); }
+    var names = ['profile.jpg', 'profile.jpeg', 'profile.png', 'profile.webp'];
+    var i = 0;
 
-    img.addEventListener('error', fallback);
-    if (img.complete && img.naturalWidth === 0) fallback();
+    function tryNext() {
+      i += 1;
+      if (i < names.length) img.setAttribute('src', names[i]);
+      else img.classList.add('is-missing');
+    }
+
+    img.addEventListener('error', tryNext);
+    if (img.complete && img.naturalWidth === 0) tryNext();
   }
 
   /* ---------- scroll reveal ---------- */
 
   function initReveal() {
-    var items = document.querySelectorAll('.reveal');
+    var items = document.querySelectorAll('.reveal, .reveal-line');
 
     if (!('IntersectionObserver' in window) || reduced) {
       items.forEach(function (el) { el.classList.add('seen'); });
@@ -204,29 +199,6 @@ var CONTACT_EMAIL = 'shreyastiwari0531@gmail.com';
     }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
     items.forEach(function (el) { observer.observe(el); });
-  }
-
-  /* ---------- timeline progress ---------- */
-
-  function initTimelineProgress() {
-    var timeline = document.querySelector('.timeline');
-    if (!timeline || reduced) return;
-    var ticking = false;
-
-    function update() {
-      var rect = timeline.getBoundingClientRect();
-      var anchor = window.innerHeight * 0.62;
-      var progress = (anchor - rect.top) / rect.height;
-      timeline.style.setProperty('--progress', Math.max(0, Math.min(1, progress)).toFixed(4));
-      ticking = false;
-    }
-
-    window.addEventListener('scroll', function () {
-      if (!ticking) { ticking = true; requestAnimationFrame(update); }
-    }, { passive: true });
-
-    window.addEventListener('resize', update, { passive: true });
-    update();
   }
 
   /* ---------- contact form ---------- */
@@ -298,14 +270,13 @@ var CONTACT_EMAIL = 'shreyastiwari0531@gmail.com';
   onReady(function () {
     initTheme();
     initNav();
-    initStickyHeader();
     initSmoothScroll();
     initReveal();
-    initTimelineProgress();
     initContactForm();
     initYear();
     initHeroSequence();
     initPortrait();
+    window.__live = 1;
   });
 
   motionQuery.addEventListener('change', function (e) { reduced = e.matches; });
